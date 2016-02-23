@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    inline_settings (0.0.4)
+    inline_settings (0.0.5)
       rails (~> 4.2)
 
 GEM

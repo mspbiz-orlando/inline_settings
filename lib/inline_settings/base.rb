@@ -40,7 +40,7 @@ module InlineSettings
         return nil if setting.blank?
         return setting.to_i
       when :boolean        
-        return (setting == 't')
+        return (setting == true)
       else
         return setting
       end
