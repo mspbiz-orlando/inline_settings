@@ -53,7 +53,15 @@ module InlineSettings
 
       settings_field = send(self.class.inline_settings_field_name)
       settings_field = {} if settings_field.nil?
-      settings_field[key.to_s] = value
+
+      setting = settings_field[key.to_s]
+      if self.class.inline_settings_fields[key][:type] == :boolean
+        settings_field[key.to_s] = (value == "1")
+      else
+        settings_field[key.to_s] = value
+      end
+
+      
 
       send("#{self.class.inline_settings_field_name}=", settings_field)
     end
